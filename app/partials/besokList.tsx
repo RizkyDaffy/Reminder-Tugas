@@ -9,7 +9,7 @@ export default function besokList() {
                 <h3 >TUGAS BAHASA</h3>
                 <p>harus menjelaskan materi tentang ..</p>
                 <div className="deadline">
-                    <ion-icon name="time"></ion-icon>
+                    
                     <span>  Deadline: Besok pukul 8:15</span>
                 </div>
             </div>
