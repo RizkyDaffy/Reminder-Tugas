@@ -41,51 +41,50 @@ export default function TugasDetail() {
   }
 
   return (
-      <div className="container"> 
-        <header>
-            <h1>{task.Title}</h1>
-        </header>
+    <div className="container">
+      <header>
+        <h1>{task.Title}</h1>
+      </header>
 
-        
-    <main>
-      
-      <section className="info-table">
+      <main>
+        <section className="info-table">
           <div className="info-row">
-              <div className="info-cell">INFORMASI</div>
-              <div className="info-cell">PENJELASAN</div>
+            <div className="info-cell">INFORMASI</div>
+            <div className="info-cell">PENJELASAN</div>
           </div>
           <div className="info-row">
-              <div className="info-cell">KODE GURU</div>
-              <div className="info-cell">{task.Guru}</div>
+            <div className="info-cell">KODE GURU</div>
+            <div className="info-cell">{task.Guru}</div>
           </div>
           <div className="info-row">
-              <div className="info-cell">DEADLINE</div>
-              <div className="info-cell">{task.Deadline ? new Date(task.Deadline).toLocaleString() : 'No Deadline'}</div>
+            <div className="info-cell">DEADLINE</div>
+            <div className="info-cell">
+              {task.Deadline ? new Date(task.Deadline).toLocaleString() : 'No Deadline'}
+            </div>
           </div>
           <div className="info-row">
-              <div className="info-cell">MAPEL</div>
-              <div className="info-cell">{task.Mapel}</div>
+            <div className="info-cell">MAPEL</div>
+            <div className="info-cell">{task.Mapel}</div>
           </div>
           <div className="info-row">
-              <div className="info-cell">TIPE TUGAS</div>
-              <div className="info-cell">{task.Tipe}</div>
+            <div className="info-cell">TIPE TUGAS</div>
+            <div className="info-cell">{task.Tipe}</div>
           </div>
-      </section>
-      
-      <section className="status">
+        </section>
+
+        <section className="status">
           <h3>Status Tugas:</h3>
           <div className="toggle-switch">
-              <input type="checkbox" id="status-toggle"/>
-              <label </label>
+            <input type="checkbox" id="status-toggle" />
+            <label htmlFor="status-toggle"></label>
           </div>
-      </section>
+        </section>
 
-      <section className="notes">
-          <h3>catatan tambahan:</h3>
-          <textarea rows="6" readOnly>{task.Detail}</textarea>
-      </section>
-        
-    </main>
-        </div>
+        <section className="notes">
+          <h3>Catatan Tambahan:</h3>
+          <textarea rows="6" readOnly value={task.Detail}></textarea>
+        </section>
+      </main>
+    </div>
   );
 }
