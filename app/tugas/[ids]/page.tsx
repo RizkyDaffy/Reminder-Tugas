@@ -77,7 +77,7 @@ export default function TugasDetail() {
           <h3>Status Tugas:</h3>
           <div className="toggle-switch">
               <input type="checkbox" id="status-toggle"/>
-              <label for="status-toggle"></label>
+              <label </label>
           </div>
       </section>
 
