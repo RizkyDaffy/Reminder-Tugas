@@ -14,7 +14,12 @@ export default function ListKonten() {
 
   useEffect(() => {
     fetch('/api/task')
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         if (Array.isArray(data)) {
           setTasks(data);
