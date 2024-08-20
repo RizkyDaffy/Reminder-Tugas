@@ -41,7 +41,6 @@ export default function TugasDetail() {
   }
 
   return (
-    <body>
       <div className="container"> 
         <header>
             <h1>{task.Title}</h1>
@@ -88,6 +87,5 @@ export default function TugasDetail() {
         
     </main>
         </div>
-          </body>
   );
 }
