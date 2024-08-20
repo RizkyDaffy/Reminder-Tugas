@@ -1,6 +1,7 @@
 import React from 'react'
-
 import Link from 'next/link'
+import { IonIcon } from '@ionic/react';
+import { timeOutline } from 'ionicons/icons';
 
 export default function bottomSection() {
   return (
@@ -11,8 +12,8 @@ export default function bottomSection() {
            <Link className="linknavg nav-icon" href="/buat">
                <ion-icon name="create"></ion-icon>
            </Link>
-        
        </footer>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script><script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script></>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script></>
   );
 }
