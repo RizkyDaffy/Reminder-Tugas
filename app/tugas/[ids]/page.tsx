@@ -82,7 +82,7 @@ export default function TugasDetail() {
 
         <section className="notes">
           <h3>Catatan Tambahan:</h3>
-          <textarea rows="6" readOnly value={task.Detail}></textarea>
+          <textarea rows={6} readOnly value={task.Detail}></textarea>
         </section>
       </main>
     </div>
