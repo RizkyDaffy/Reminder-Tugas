@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../index.js';
+import { IonIcon } from '@ionic/react';
 
 function truncateText(text, maxSentences) {
     const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
@@ -31,7 +32,7 @@ export default function ListKonten() {
   }, []);
 
   return (
-   <> <main>
+    <main>
       {loading ? (
         <div className="loading">
           <p>sabar tod lagi baca database...</p>
@@ -46,13 +47,12 @@ export default function ListKonten() {
             <h3 className="titekntn"><b>{task.Title}</b></h3>
             <p>{truncateText(task.About, 1)}</p>
             <div className="deadline">
-              <ion-icon name="time"></ion-icon>
+              <IonIcon name="time"></IonIcon>
               <span> Deadline: {new Date(task.Deadline).toLocaleString()}</span>
             </div>
           </section>
         ))
       )}
     </main>
-   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script><script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script></>
   );
 }
