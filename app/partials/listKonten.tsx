@@ -12,7 +12,8 @@ export default function ListKonten() {
   const [tasks, setTasks] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
+  // Function to fetch tasks
+  const fetchTasks = () => {
     fetch('/api/task')
       .then((response) => {
         if (!response.ok) {
@@ -34,6 +35,16 @@ export default function ListKonten() {
         setTasks([]);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchTasks(); // Initial fetch
+
+    const interval = setInterval(() => {
+      fetchTasks(); // Fetch periodically
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
   return (
