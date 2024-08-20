@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { IonIcon } from '@ionic/react';
 
 export default function profileTop() {
   return (
@@ -8,7 +9,7 @@ export default function profileTop() {
             <h3>TUGAS BAHASA</h3>
             <p>harus menjelaskan materi tentang ..</p>
             <div className="profile-deadline">
-                <ion-icon name="time"></ion-icon>
+                <IonIcon name="time"></IonIcon>
                 <span>Deadline: Hari ini pukul 8:15</span>
             </div>
         </section>
@@ -16,11 +17,10 @@ export default function profileTop() {
             <h3>TUGAS BAHASA</h3>
             <p>harus menjelaskan materi tentang ..</p>
             <div className="profile-deadline">
-                <ion-icon name="time"></ion-icon>
+                <IonIcon name="time"></IonIcon>
                 <span>Deadline: Hari ini pukul 8:15</span>
             </div>
         </section>
-    </main>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script><script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script></>
+    </main></>
   );
 }
