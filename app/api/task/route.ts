@@ -1,22 +1,17 @@
 // app/api/task/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '../../../lib/mongodb';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'mongodb'; // Import ObjectId
 
 export async function GET(req: NextRequest) {
   try {
     const client = await clientPromise;
-    const db = client.db('main-db');
+    const db = client.db('main-db'); // Ganti 'main-db' dengan nama database kamu
 
-    // Log untuk debugging
-    console.log('Connected to MongoDB');
-
-    // Query MongoDB dengan ObjectId
+    // Query ke MongoDB menggunakan ObjectId
     const result = await db.collection('all-db').findOne({
       _id: new ObjectId("66b43a652f119c6210cb115e")
     });
-
-    console.log('Result from MongoDB:', result);
 
     if (result && result.all) {
       return NextResponse.json(result.all);
@@ -24,7 +19,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ message: 'Data not found' }, { status: 404 });
     }
   } catch (e) {
-    console.error('Error fetching data:', e);
+    console.error(e);
     return NextResponse.json({ message: 'Failed to fetch tasks' }, { status: 500 });
   }
 }
